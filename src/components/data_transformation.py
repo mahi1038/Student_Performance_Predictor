@@ -30,7 +30,7 @@ class DataTransformation:
         numerical_features = ['writing score', 'reading score']
         categorical_features = [
             'gender',
-            'race/ethnicity',
+            'race ethnicity',
             'parental level of education',
             'lunch',
             'test preparation course'
@@ -80,6 +80,8 @@ class DataTransformation:
 
         train_arr = np.c_[X_train_arr, np.array(y_train_df)]
         test_arr = np.c_[X_test_arr, np.array(y_test_df)]
+
+        print("Train columns:", train_df.columns.tolist())
 
 
         save_object(self.data_transformation_config.preprocessor_obj_file_path, preprocessor_obj)

@@ -57,13 +57,14 @@ class ModelTrainer:
         if best_model_score < 0.6:
             print("no model found, do something about it")
 
-        save_object(
-            self.model_trainer_config.model_trainer_file_path, best_model
-        )
-
+       
         best_model.fit(X_train, y_train)
         predicted = best_model.predict(X_test)
         r2_accuracy = r2_score(y_test, predicted)
+
+        save_object(
+            self.model_trainer_config.model_trainer_file_path, best_model
+        )
 
         return r2_accuracy
 
