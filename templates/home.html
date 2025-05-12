@@ -18,9 +18,9 @@
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       width: 400px;
+      text-align: center;
     }
     h2 {
-      text-align: center;
       color: #4a4a4a;
     }
     label {
@@ -28,6 +28,7 @@
       display: block;
       margin-top: 15px;
       color: #333;
+      text-align: left;
     }
     select, input[type="number"] {
       width: 100%;
@@ -51,12 +52,17 @@
     button:hover {
       background-color: #45a049;
     }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
 
-  <div class="login">
-    <h2>Predict Math Score</h2>
+  <div class="form-container">
+    <h2>PREDICT MATH SCORE</h2>
     <form action="{{url_for('predict')}}" method="post">
 
       <label for="gender">Gender</label>
@@ -104,11 +110,14 @@
 
       <button type="submit">Predict Math Score</button>
     </form>
-  </div>
 
-  <h2>
-    THE PREDICTED MATH SCORE IS {{results}}
-  </h2>
+    {% if results %}
+    <div class="result">
+      THE PREDICTED MATH SCORE IS {{ results }}
+    </div>
+    {% endif %}
+  </div>
 
 </body>
 </html>
+
