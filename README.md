@@ -63,8 +63,9 @@ The following regressors are evaluated, and the best-performing one is selected 
 
 2. Create an active virtual environment
 
-3. run on terminal 'python app.py'
-   The app will run on http://localhost:5000
+3. run on terminal 'python app.py'  
+
+   The app will run on local host
 
 
 This project was developed as part of a learning exercise with the help of a tutorial. It focuses on building a well-structured ML pipeline and integrating it with a simple web interface.
